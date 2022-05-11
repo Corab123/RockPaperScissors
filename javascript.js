@@ -56,10 +56,10 @@ function checkMove(playerGuess){
     }
 }
 
-function game(){
+function game(length=5){
 let playerScore = 0
 let computerScore = 0
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < length; i++){
         roundScore = playRound()
         if (roundScore===1) {
             playerScore++
