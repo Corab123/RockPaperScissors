@@ -59,7 +59,8 @@ function checkMove(playerGuess){
 function game(length=5){
 let playerScore = 0
 let computerScore = 0
-    for (let i = 0; i < length; i++){
+console.log(`Game begins. First to win ${length} games wins.`)
+    while (playerScore < length && computerScore < length){
         roundScore = playRound()
         if (roundScore===1) {
             playerScore++
