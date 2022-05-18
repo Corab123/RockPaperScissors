@@ -5,9 +5,8 @@ function computerPlay(){
     return guesses[Math.floor(Math.random()*3)]; 
 }
 
-function playRound() {
+function playRound(playerGuess) {
     const computerGuess = computerPlay();
-    playerGuess = prompt("Enter your guess: ","Rock");
     playerGuess = checkMove(playerGuess);
     console.log(`Computer guess: ${computerGuess}.`);
     console.log(`Player guess: ${playerGuess}`);
@@ -77,3 +76,10 @@ console.log(`Game begins. First to win ${length} games wins.`)
         console.log("Computer won the game!")
     }
 }
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playRound(button.textContent);
+    });
+});

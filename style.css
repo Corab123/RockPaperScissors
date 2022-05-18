@@ -1,0 +1,14 @@
+body{
+    background-color: lightcyan;
+}
+.rps{
+    display:flex;
+    gap: 1rem;
+    padding: 5rem;
+}
+.selection{
+    border: solid black 0.1rem;
+    padding: 0.3rem;
+    flex-grow:1;
+    text-align:center;
+}
