@@ -1,5 +1,10 @@
 
 const guesses = ['ROCK', 'PAPER', 'SCISSORS']
+const gameStart=document.querySelector("div.gameStart");
+const gameText=document.querySelector("div.gameText");
+const currentScore=document.querySelector("div.currentScore");
+let playerScore = 0
+let computerScore = 0
 
 function computerPlay(){
     return guesses[Math.floor(Math.random()*3)]; 
@@ -7,19 +12,20 @@ function computerPlay(){
 
 function playRound(playerGuess) {
     const computerGuess = computerPlay();
-    playerGuess = checkMove(playerGuess);
-    console.log(`Computer guess: ${computerGuess}.`);
-    console.log(`Player guess: ${playerGuess}`);
     if (computerGuess === 'ROCK') {
         if (playerGuess === 'ROCK') {
-            console.log(`Both players chose ${playerGuess}. It's a tie.`);
-            return 0;
+            gameText.textContent = (`Both players chose ${playerGuess}. It's a tie, score remains unchanged.`);
+            return;
         } else if (playerGuess === 'PAPER') {
-            console.log(`Player wins with ${playerGuess}`);
-            return 1;
+            gameText.textContent = `Player wins with ${playerGuess}.`;
+            playerScore = playerScore +1;
+            currentScore.textContent =`Current Score: Player: ${playerScore} | Computer: ${computerScore}`;
+            return;
         } else {
-            console.log(`Computer wins with ${computerGuess}`);
-            return -1;
+            gameText.textContent = `Computer wins with ${computerGuess}.`
+            computerScore = computerScore +1;
+            currentScore.textContent =`Current Score: Player: ${playerScore} | Computer: ${computerScore}`;
+            return;
         }
     } else if (computerGuess === 'PAPER') {
         if (playerGuess === 'PAPER') {
@@ -46,19 +52,52 @@ function playRound(playerGuess) {
     }
 }
 
-function checkMove(playerGuess){
+const buttons = document.querySelectorAll('button.game');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playRound(button.textContent.toUpperCase());
+    });
+});
+
+const newGame=document.querySelector('button.newGame');
+
+    
+newGame.addEventListener('click', () => {
+    const numberOfWins=parseInt(document.getElementById('numberOfGames').value);
+    if (numberOfWins<1){
+        alert("Can't play less than 1 wins!");
+        return;
+    };
+        if (!numberOfWins) {
+        alert("Please input a number.");
+        return;
+    };
+
+    playerScore = 0
+    computerScore = 0
+
+    gameStart.textContent= `Let's begin! Game lasts until ${numberOfWins} wins. Choose wisely!`;
+    currentScore.textContent =`Current Score: Player: ${playerScore} | Computer: ${computerScore}`;
+
+
+    const newGameElements = document.querySelector('div.newGame');
+    newGameElements.parentNode.removeChild(newGameElements);
+    
+});
+
+
+/* function checkMove(playerGuess){
     if (guesses.includes(playerGuess.toUpperCase())) {
         return playerGuess.toUpperCase();
     } else {
         console.log("Invalid guess")
         return
     }
-}
+} */
 
-function game(length=5){
+/* function playGame(length=5){
 let playerScore = 0
 let computerScore = 0
-console.log(`Game begins. First to win ${length} games wins.`)
     while (playerScore < length && computerScore < length){
         roundScore = playRound()
         if (roundScore===1) {
@@ -75,11 +114,4 @@ console.log(`Game begins. First to win ${length} games wins.`)
     } else {
         console.log("Computer won the game!")
     }
-}
-
-const buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        playRound(button.textContent);
-    });
-});
+} */

@@ -9,12 +9,19 @@
 </head>
 <body>
     <div class="game">
-        <div class="rps">
-            <button class="rock selection">Rock</button>
-            <button class="paper selection">Paper</button>
-            <button class="scissors selection">Scissors</button>
+        <div class="newGame">
+            <label for="numberOfGames">Please specify number of games:</label>
+            <input id="numberOfGames">
+            <button class="selection newGame">Start a new game</button>
         </div>
-        <div class="score">Score:</div>
+        <div class="game rps">
+            <button class="rock game selection">Rock</button>
+            <button class="paper game selection">Paper</button>
+            <button class="scissors game selection">Scissors</button>
+        </div>
+        <div class="gameStart"></div>
+        <div class="gameText"></div>
+        <div class="currentScore"></div>
     </div>
     <script src="./javascript.js" defer></script>
 </body>

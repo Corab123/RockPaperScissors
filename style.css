@@ -3,12 +3,26 @@ body{
 }
 .rps{
     display:flex;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 5rem;
 }
+button{
+    color:black;
+    background-color:aquamarine;
+    border:0px
+    
+}
 .selection{
-    border: solid black 0.1rem;
     padding: 0.3rem;
     flex-grow:1;
     text-align:center;
+    height:5rem;
+    font-size:1.8rem;
+}
+
+.newgame{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:5rem;
 }
