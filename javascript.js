@@ -83,7 +83,7 @@ newGame.addEventListener('click', () => {
 
 const gameStart=document.querySelector("div.gameStart");
 const newGameElements = document.querySelector('div.newGame');
-
+const description=document.querySelector('.description1');
 function initiateNewGame(){
     numberOfWins=parseInt(document.getElementById('numberOfGames').value);
     if (numberOfWins<1){
@@ -107,6 +107,7 @@ function initiateNewGame(){
     currentScore.classList.remove('hide');
     currentScore.textContent =`Current Score: Player: ${playerScore} | Computer: ${computerScore}`;
 
+    description.classList.add('hide');
     newGameElements.classList.add('hide');
     changeGameElementHidden();
     gamePlay=true;

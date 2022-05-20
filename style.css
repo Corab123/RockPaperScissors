@@ -1,16 +1,19 @@
 body{
-    background-color: lightcyan;
+    background-color: #111111;
+    color:#eeeeee;
 }
-.rps{
+div.rps{
     display:flex;
     gap: 1.5rem;
     padding: 5rem;
+    justify-content:center;
 }
 button{
-    color:black;
-    background-color:aquamarine;
-    border:0px
-    
+    color:#111111;
+    background-color: #ff9900;
+    border:0px;
+    max-width:10rem;
+    border-radius:10px;
 }
 .selection{
     padding: 0.3rem;
@@ -20,11 +23,64 @@ button{
     font-size:1.8rem;
 }
 
-.newgame{
+.newGame{
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding:5rem;
+    padding:2rem;
+    gap:2rem;
+}
+label{
+    font-size: 1.5rem;
+}
+input{
+    height:1.5rem;
+    text-align:center;
+    font-size:1.5rem;
+    width: 3rem;
+    background-color:#eeeeee;
+    border-radius:10px;
+    box-shadow:none;
+    border:0px;
+}
+
+.texts{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    font-size:1.5rem;
+    gap: 0.5rem;
+}
+.playMore{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    font-size:1.5rem;
+}
+button.playMore{
+    padding:1.5rem;
+}
+
+.description{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+p{
+    max-width:50rem;
+    text-align: center;
+}
+
+.fadeout{
+    opacity: 0;
+    animation:fadeout 1s;
+}
+@keyframes fadeout{
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
 .hide{
     display:none;
