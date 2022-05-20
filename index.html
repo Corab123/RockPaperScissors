@@ -8,20 +8,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game">
+    <div class="baseGame">
         <div class="newGame">
-            <label for="numberOfGames">Please specify number of games:</label>
+            <div class="newGame"><label for="numberOfGames">How many wins should decide the game?</label>
             <input id="numberOfGames">
-            <button class="selection newGame">Start a new game</button>
+            </div>
+            <button class="selection newGame">Start</button>
         </div>
         <div class="game rps">
-            <button class="rock game selection">Rock</button>
-            <button class="paper game selection">Paper</button>
-            <button class="scissors game selection">Scissors</button>
+            <button class="rock rps selection">Rock</button>
+            <button class="paper rps selection">Paper</button>
+            <button class="scissors rps selection">Scissors</button>
         </div>
-        <div class="gameStart"></div>
-        <div class="gameText"></div>
-        <div class="currentScore"></div>
+        <div class="texts">
+            <div class="gameStart hide"></div>
+            <div class="gameText"></div>
+            <div class="currentScore hide"></div>
+            <div class="playMore hide">Would you like to play one more?
+                <button class="playMore">Yes!</button>
+            </div>
+        </div>
     </div>
     <script src="./javascript.js" defer></script>
 </body>

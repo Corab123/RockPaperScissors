@@ -26,3 +26,6 @@ button{
     align-items: center;
     padding:5rem;
 }
+.hide{
+    display:none;
+}
