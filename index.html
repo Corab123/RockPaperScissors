@@ -5,8 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="./javascript.js"></script>
+    <div class="baseGame">
+        <div class="description">
+            <p class="description1">This is a     classic Rock, Paper, Scissors game. After you choose how long the game should last, click Start to begin.</p>
+            <p class="description2"> Select your weapon each round to fight the Evil Computer.</p>
+        </div>
+        <div class="newGame">
+            <div class="newGame"><label for="numberOfGames">How many wins should decide the game?</label>
+            <input id="numberOfGames">
+            </div>
+            <button class="selection newGame">Start</button>
+        </div>
+        <div class="game rps">
+            <button class="rock rps selection">Rock</button>
+            <button class="paper rps selection">Paper</button>
+            <button class="scissors rps selection">Scissors</button>
+        </div>
+        <div class="texts">
+            <div class="gameStart hide"></div>
+            <div class="gameText"></div>
+            <div class="currentScore hide"></div>
+            <br>
+            <div class="playMore hide">Would you like to play one more?
+                <button class="playMore">Yes!</button>
+            </div>
+        </div>
+    </div>
+    <script src="./javascript.js" defer></script>
 </body>
 </html>
